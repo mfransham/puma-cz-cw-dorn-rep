@@ -10,10 +10,15 @@ There is no straightforward one-to-one relationship between PUMAs and CZs.  To m
 
 For many observations in IPUMS, the PUMA of residence will uniquely identify the CZ of residence.  However where the PUMA contains two or more CZs there is uncertainty about which CZ to allocate this observation to.  The Dorn approach is to allocate fractions of the observation (using a fractional weight) to each CZ which overlaps with the PUMA, with weights determined by the proportion of the PUMA population in each CZ.
 
-This approach requires a set of smaller geographical units for which population counts are available that nests (exactly or approximately) within the two larger sets of geographical units.  To construct a lookup (or crosswalk) between 1990 PUMAs and 1990 CZs the appropriate geography is Census tracts.  One approach is to use spatial analysis to identify which PUMA and CZ each Census tract falls within; however [the US Census Bureau publish files for 1990](https://usa.ipums.org/usa/volii/puma.shtml) onwards that provide a lookup from Census tracts to PUMAs and counties (the county then allows us to identify the CZ).  It is this file that Dorn uses to calculate his crosswalk file for 1990.  
+This approach requires a set of smaller geographical units for which population counts are available that nests (exactly or approximately) within the two larger sets of geographical units.  To construct a lookup (or crosswalk) between 1990 PUMAs and 1990 CZs the appropriate geography is Census tracts.  Spatial analysis can identify which PUMA and CZ each Census tract falls within; this is unnecessary in this case as [the US Census Bureau has published files for 1990](https://usa.ipums.org/usa/volii/puma.shtml) onwards that provide a lookup from Census tracts to PUMAs and counties (the county allows us to identify the CZ).  It is this file that Dorn uses to calculate his crosswalk file for 1990.  
 
 ## The replication files
 
-[details of code files here - where they are, what they do] 
+`puma-cz-dorn-replication.R`
 
-Stata code to follow 
+- reads in the data: tract-PUMA lookup file with tract population totals; county-CZ lookup file
+- reformats county codes in a consistent way, then links CZs to counties
+- calculates the proportion of PUMA population in each CZ (variable 'afactor')
+- checks the same results are obtained as David Dorn's published table
+
+Stata code will hopefully follow, along with code that constructs lookups to 2010 commuting zones produced by [Fowler and Jensen](https://sites.psu.edu/psucz/data/).  
