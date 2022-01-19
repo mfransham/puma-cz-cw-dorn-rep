@@ -16,7 +16,9 @@ This approach requires a set of smaller geographical units for which population 
 
 `puma-cz-dorn-replication.R`
 
-- reads in the data: tract-PUMA lookup file with tract population totals; county-CZ lookup file
+- reads in the data: 
+  - tract-PUMA lookup file with tract population totals
+  - county-CZ lookup file
 - reformats county codes in a consistent way, then links CZs to counties
 - calculates the proportion of PUMA population in each CZ (variable 'afactor')
 - checks the same results are obtained as David Dorn's published table
