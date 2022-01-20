@@ -2,7 +2,7 @@
 
 # packages
 library(tidyverse)
-
+library(haven)
 
 ####### read data ---------------------------------------------------------------------
 
@@ -56,3 +56,7 @@ left_join(puma1990_cz1990, dorn_puma1990_cz1990, by = c("puma1990", "czone") ) %
   mutate(diff = afactor.x - afactor.y) %>% 
   pull(diff) %>% 
   summary()
+
+## R environment ----------------------------------------------------
+
+writeLines(capture.output(sessionInfo()), "sessionInfo.txt")
