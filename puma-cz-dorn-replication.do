@@ -38,7 +38,7 @@ erase counties90-29c6g4u.dta
 collapse (sum) PUMApopnincz = Areapopulation, by(ers90 State PUMA PUMApopulation)
 
 * proportion PUMA population in each CZ 
-replace afactor = round(PUMApopnincz / PUMApopulation, 0.001)
+gen afactor = round(PUMApopnincz / PUMApopulation, 0.001)
 
 * check the variable 
 summ afactor, detail
