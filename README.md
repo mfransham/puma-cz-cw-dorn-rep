@@ -23,4 +23,8 @@ This approach requires a set of smaller geographical units for which population 
 - calculates the proportion of PUMA population in each CZ (variable 'afactor')
 - checks the same results are obtained as David Dorn's published table
 
-Stata code will hopefully follow, along with code that constructs lookups to 2010 commuting zones produced by [Fowler and Jensen](https://sites.psu.edu/psucz/data/).  
+`puma-cz-dorn-replication.do`
+
+- as above, but with Stata 17
+
+This may later be supplemented with code that constructs lookups to 2010 commuting zones produced by [Fowler and Jensen](https://sites.psu.edu/psucz/data/).  
