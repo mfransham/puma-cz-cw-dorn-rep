@@ -28,6 +28,9 @@ summ fips, detail
 * merge CZ identifier ERS90 into the dataset - has to be a .dta file
 merge m:1 fips using counties90-29c6g4u, keepusing(ers90)
 
+* delete .dta version of file 
+erase counties90-29c6g4u.dta
+
 
 ** calculate proportion of PUMA population in each CZ (variable 'afactor') -------
 
@@ -53,4 +56,3 @@ order afactor puma1990 czone
 
 * save file as dta
 save puma-cz-dorn-replication
-
